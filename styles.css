@@ -19,8 +19,8 @@ body {
 
 .container {
   background-color: var(--white);
-  height: 100vh;
-  width: 100vw;
+  height: auto;
+  width: auto;
 }
 
 .wrap {
@@ -29,8 +29,8 @@ body {
 }
 
 .newsletter {
-  height: 100%;
-  display: none;
+  height: 100vh;
+  /* display: none; */
 }
 
 .main-content {
@@ -39,7 +39,7 @@ body {
 
 .header {
   font-size: 2.5em;
-  margin: 0 0 30px;
+  margin: 0 0 20px;
 }
 
 .text {
@@ -55,18 +55,31 @@ body {
   margin-right: 18px;
 }
 
-#subscribe-form small {
+#subscribe-form {
+  margin-top: 30px;
+}
+
+#subscribe-form>div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#subscribe-form>div>small {
   font-size: 12px;
   font-weight: 700;
-  margin-bottom: 10px;
 }
 
 .form-input {
   padding: 18px 25px;
   border-radius: 8px;
   border: 1px solid var(--grey);
+  margin-top: 10px;
   margin-bottom: 25px;
   font-size: 15px;
+}
+
+.form-input:active {
+  border-color: var(--blue-700);
 }
 
 .btn {
@@ -79,14 +92,83 @@ body {
   font-size: 15px;
 }
 
+.btn:hover {
+  background-color: var(--red);
+  box-shadow: 0 10px 40px rgba(255, 98, 87, 0.5);
+}
+
 .success-message {
-  /* display: none; */
-  height: 100%;
+  display: none;
+  height: 100vh;
   margin: 0 20px;
-  display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
 
 .success-message img {
   width: 60px;
+  margin-top: 140px;
+  margin-bottom: 40px;
+}
+
+.dismiss-message-btn {
+  margin-bottom: 40px;
+}
+
+.error-state {
+  border-color: var(--red);
+  background-color: rgba(255, 98, 87, 0.1);
+}
+
+.error-text {
+  color: var(--red);
+}
+
+@media screen and (min-width: 900px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    border-radius: 40px;
+  }
+
+  .newsletter {
+    flex-direction: row-reverse;
+    margin: 20px;
+    max-width: 900px;
+    max-height: 600px;
+  }
+
+  .illustration {
+    content: url('assets/images/illustration-sign-up-desktop.svg');
+  }
+
+  .main-content {
+    margin: 70px 60px 70px 40px;
+  }
+
+  .header {
+    font-size: 3.5em;
+  }
+
+  .text {
+    font-size: 1.1em;
+  }
+
+  .success-message {
+    max-height: 420px;
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    padding: 50px;
+  }
+
+  .success-message img {
+    margin: 0 0 30px;
+  }
+
+  .dismiss-message-btn {
+    margin-top: 20px;
+  }
 }
